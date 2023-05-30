@@ -1,0 +1,108 @@
+/* trida tlacitko urcuje vzhled 2 tlacitek na indexu  + reset tlacitka */
+.tlacitko {
+    background-color: rgb(94, 184, 229);
+}
+
+/* :focus - urcuje barvu tlacitka po kliknuti */
+.tlacitko:hover, .tlacitko:focus{
+    background-color: rgba(94, 184, 229, 0.8);;
+}
+
+
+/* Vzhled vnejsiho divu, ktery obaluje tlacitko */
+.vnejsi_bunka{
+    background-color: rgb(197, 197, 197);
+    width: 3.2em;
+    height: 3.2em;
+    color: blue;
+    border: solid black 1px;
+}
+
+
+
+.vnejsi_bunka:hover{
+    background-color: rgba(197, 197, 197, 0.9);
+}
+
+
+/* Vzhled vnitrniho tlacitka, ktere je obaleno vnejsim divem */
+.vnitrni_bunka{
+    background-color: rgb(197, 197, 197);
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    color: blue;
+    font-size: 2em;
+    border: none;
+}
+
+
+/* Text u elementu s touto tridou nepujde oznacit */
+.highlight_del {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.highlight_del::selection {
+  background: transparent;
+}
+
+
+
+
+/* upravuje tridu d-flex z bootstrapu, aby nelamala radky v poli */
+.row.d-flex{
+    flex-wrap: nowrap;
+}
+
+
+/* Zajisteni responzivnosti u herniho pole */
+
+@media only screen and (max-width: 800px) /* (Zmeny pro monitory do dane sirky) */{
+    .vnejsi_bunka{
+        width: 2.8em;
+        height: 2.8em;
+    }
+
+    .vnitrni_bunka{
+        font-size: 1.7em;
+    }
+
+
+
+}
+
+@media only screen and (max-width: 800px) {
+    .vnejsi_bunka{
+        width: 2.6em;
+        height: 2.6em;
+    }
+
+    .vnitrni_bunka{
+        font-size: 1.5em;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .vnejsi_bunka{
+        width: 2em;
+        height: 2em;
+    }
+
+    .vnitrni_bunka{
+        font-size: 1.3em;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .vnejsi_bunka{
+        width: 1.5em;
+        height: 1.5em;
+    }
+
+    .vnitrni_bunka{
+        font-size: 1em;
+    }
+}

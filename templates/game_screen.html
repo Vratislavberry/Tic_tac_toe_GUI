@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+
+
+
+{% block content %}
+
+    <style id="muj_styl">
+
+    </style>
+
+    <div class="container">
+        <!-- Message for player + reset button -->
+        <div class="row text-center">
+            <div class="col">
+                <p id="game_status_message" class="fs-3">It's turn of player <span style="color: {{ game.player_color }};" id="player_symbol">{{ game.player_on_turn }}</span></p>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col">
+                <button id="reset_button" class="btn btn-lg mb-2 tlacitko" onclick="server.start_new_game()">Reset</button>
+            </div>
+        </div>
+        <!-- End of Message and reset button -->
+
+        <!-- Game board -->
+        {% for y in range(game.board_size) %}
+            <div class="row g-0 d-flex justify-content-center">
+                {% for x in range(game.board_size) %}
+                    <div class="vnejsi_bunka"><button id="btn_{{ x }}_{{ y }}" onclick="server.make_turn({{ x }}, {{ y }})" class="vnitrni_bunka highlight_del"></button></div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+        <!-- End of game board -->
+
+
+    </div>
+
+{% endblock %}
